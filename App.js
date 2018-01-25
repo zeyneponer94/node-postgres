@@ -17,7 +17,6 @@ app.get('/' , function(req,res) {
 } );
 
 app.get('/db/readRecords', function(req,res){
-    alert("4");        
     dbOperations.getRecords(req,res);
 });
 
