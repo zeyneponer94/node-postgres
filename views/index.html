@@ -74,9 +74,9 @@
                            <h2><font face="verdana" size="2">Altus ve Grundig İş Emri Girişine Hoşgeldiniz.</font></h2>
                            <h2><font face="verdana" size="2"> Şifreniz ile güvenli giriş yapabilirsiniz.</font></h2>
                        </div>    
-                       <div class="box3">                        
+                       <div class="box3" ng-controller="testController">                        
                            <form >
-                           <div class="form-group" ng-controller="testController">
+                           <div class="form-group" >
                                <section>            
                                 <h2><font face="verdana" size="2">Kullanıcı Adı</font></h2>                            
                                </section>
@@ -97,20 +97,20 @@
                                     <button type="button" class="btn btn-success btn-lg btn-block" ng-click="getAllRec()">GİRİŞ</button>
                                 </section>    
                                 
-                                            
+                            </div>         
                                 <div class="row clearfix"> 
                                         <table class="table table-bordered table-hover table-condensed">
                                             <tbody>
                                                 <tr ng-repeat="item in dataset">
                                                     <td> {{item.username}} </td>
-                                                    <td> {{item.username_id}} </td>
+                                                    <td> {{item}} </td>
                                                     <td> {{item.name}} </td>
                                                 </tr>
                                             </tbody>
                                         </table>     
                                 </div>
 
-                            </div>
+                           
                             </form>            
                         </div>   
 
