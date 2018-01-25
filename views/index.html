@@ -128,7 +128,7 @@
                         method: "GET",        
                         url: '/db/readRecords', 
                     }) 
-                    .then(function(response){ 
+                    .success(function(response){ 
                          $scope.data = response.data;
                     })
                     .error(function (response) {
