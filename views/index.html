@@ -119,9 +119,9 @@
                         method: "GET",        
                         url: '/db/readRecords', 
                     }) 
-                    .success(function(data, status){ 
+                    .success(function(response){ 
                         alert("1");
-                         $scope.data = status;
+                         $scope.data = response.data;
                     })
                     .error(function (data, status) {
                         alert("2");
