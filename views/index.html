@@ -119,7 +119,7 @@
                         method: "GET",        
                         url: '/db/readRecords', 
                     }) 
-                    .success(function(response){ 
+                    .then(function(response){ 
                         alert("1");
                          $scope.data = response.data;
                     })
