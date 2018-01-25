@@ -12,6 +12,7 @@ module.exports = {
         var query = client.query("select * from User");
 
         query.on("row", function (row, result) { 
+            alert(row);
             result.addRow(row); 
         });
 
