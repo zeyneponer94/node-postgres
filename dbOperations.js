@@ -4,12 +4,12 @@ module.exports = {
       
         //You can run command "heroku config" to see what is Database URL from Heroku belt
       
-        var conString = process.env.DATABASE_URL || "postgres://postgres:Welcome123@localhost:5432/postgres";
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
 
-        var query = client.query("select * from employee");
+        var query = client.query("select * from User");
 
         query.on("row", function (row, result) { 
             result.addRow(row); 
@@ -25,9 +25,9 @@ module.exports = {
     
 
     addRecord : function(req, res){
-        var pg = require('pg');  
+      /*  var pg = require('pg');  
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:Welcome123@localhost:5432/postgres";
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
@@ -40,13 +40,13 @@ module.exports = {
             res.write('Success');
             res.end();  
         });
-
+*/
     },
     
      delRecord : function(req, res){
-        var pg = require('pg');   
+     /*   var pg = require('pg');   
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:Welcome123@localhost:5432/postgres";
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
@@ -57,14 +57,14 @@ module.exports = {
             client.end(); 
             res.write('Success');
             res.end();  
-        });
+        }); */
 
     },
     
     createTable : function(req, res){
-        var pg = require('pg');   
+      /*  var pg = require('pg');   
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:Welcome123@localhost:5432/postgres";
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
@@ -83,13 +83,13 @@ module.exports = {
             res.write('Table Schema Created');
             res.end();  
         });
-
+*/
     },
     
     dropTable : function(req, res){
-        var pg = require('pg');   
+      /*  var pg = require('pg');   
         
-        var conString = process.env.DATABASE_URL || "postgres://postgres:Welcome123@localhost:5432/postgres";
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
@@ -101,7 +101,7 @@ module.exports = {
             res.write('Table Schema Deleted');
             res.end();  
         });
-
+*/
     }
 
     
