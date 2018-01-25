@@ -9,7 +9,7 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select name from User");
+        var query = client.query("select * from User");
 
         query.on("row", function (row, result) { 
             result.addRow(row); 
