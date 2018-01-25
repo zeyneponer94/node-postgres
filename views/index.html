@@ -115,6 +115,7 @@
             myApp.controller('testController', ['$scope' ,'$http',  function($scope,$http) {
                 
                 $scope.getAllRec = function(){ 
+                    alert("3");
                     $http({method: 'GET', url: '/db/readRecords'}).
                         success(function(data, status) { 
                           alert("1");
