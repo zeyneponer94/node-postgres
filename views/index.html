@@ -113,18 +113,8 @@
             var myApp = angular.module('testApp',[ ]); 
              
             myApp.controller('testController', ['$scope' ,'$http',  function($scope,$http) {
-         /*       
+       
                 $scope.getAllRec = function(){ 
-                    $http({method: 'GET', url: '/db/readRecords'}).
-                        success(function(data, status) { 
-                          alert("1");
-                          $scope.dataset = data; 
-                        }).
-                        error(function(data, status) {
-                          alert("2");
-                          $scope.dataset = data || "Request failed "; 
-                      }); */
-
                     $http({
                         method: "GET",        
                         url: '/db/readRecords', 
@@ -137,6 +127,22 @@
                         alert("2");
                          $scope.data = data || "Request failed"; 
                     });
+                }
+ /*
+ 
+ 
+                    $http({method: 'GET', url: '/db/readRecords'}).
+                        success(function(data, status) { 
+                          alert("1");
+                          $scope.dataset = data; 
+                        }).
+                        error(function(data, status) {
+                          alert("2");
+                          $scope.dataset = data || "Request failed "; 
+                      });
+                      
+                      */
+
 
 
                 
