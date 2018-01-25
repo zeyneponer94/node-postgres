@@ -95,12 +95,25 @@
                                 </section>                                                         
                                 <section>                                                                                                
                                     <button type="button" class="btn btn-success btn-lg btn-block" ng-click="getAllRec()">GİRİŞ</button>
-                                    {{data}}
                                 </section>                             
                             </div>
                             </form>            
                         </div>   
                     </div>
+
+                    <div class="row clearfix"> 
+                            <table class="table table-bordered table-hover table-condensed">
+                                <tbody>
+                                    <tr ng-repeat="item in dataset">
+                                        <td> {{item.username}} </td>
+                                        <td> {{item.username_id}} </td>
+                                        <td> {{item.name}} </td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                             
+                    </div>
+
             </center>
 
         <script src="lib/angular.min.js"></script>         
@@ -115,6 +128,21 @@
             myApp.controller('testController', ['$scope' ,'$http',  function($scope,$http) {
        
                 $scope.getAllRec = function(){ 
+
+                    $http({method: 'GET', url: '/db/readRecords'}).
+                        success(function(data, status) { 
+                          alert("1");
+                          $scope.dataset = data; 
+                        }).
+                        error(function(data, status) {
+                          alert("2");
+                          $scope.dataset = data || "Request failed "; 
+                      });
+
+                }
+ /*
+ 
+ 
                     $http({
                         method: "GET",        
                         url: '/db/readRecords', 
@@ -127,19 +155,7 @@
                         alert("2");
                          $scope.data = data || "Request failed"; 
                     });
-                }
- /*
- 
- 
-                    $http({method: 'GET', url: '/db/readRecords'}).
-                        success(function(data, status) { 
-                          alert("1");
-                          $scope.dataset = data; 
-                        }).
-                        error(function(data, status) {
-                          alert("2");
-                          $scope.dataset = data || "Request failed "; 
-                      });
+
                       
                       */
 
