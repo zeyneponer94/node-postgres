@@ -63,7 +63,7 @@
     </head>
     <body style="background-color:#D3D3D3;">
             <center>
-                    <div  class="frame well" ng-app="testApp">
+                <div  class="frame well" ng-app="testApp">
                         <div class="box"> 
                             <img src="/images/altus-logo.png" alt="Altus Logo" width="15" height="40">      
                         </div>
@@ -95,24 +95,26 @@
                                 </section>                                                         
                                 <section>                                                                                                
                                     <button type="button" class="btn btn-success btn-lg btn-block" ng-click="getAllRec()">GİRİŞ</button>
-                                </section>                             
+                                </section>    
+                                
+                                            
+                                <div class="row clearfix"> 
+                                        <table class="table table-bordered table-hover table-condensed">
+                                            <tbody>
+                                                <tr ng-repeat="item in dataset">
+                                                    <td> {{item.username}} </td>
+                                                    <td> {{item.username_id}} </td>
+                                                    <td> {{item.name}} </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>     
+                                </div>
+
                             </div>
                             </form>            
                         </div>   
-                    </div>
 
-                    <div class="row clearfix"> 
-                            <table class="table table-bordered table-hover table-condensed">
-                                <tbody>
-                                    <tr ng-repeat="item in dataset">
-                                        <td> {{item.username}} </td>
-                                        <td> {{item.username_id}} </td>
-                                        <td> {{item.name}} </td>
-                                    </tr>
-                                </tbody>
-                            </table> 
-                             
-                    </div>
+                </div>
 
             </center>
 
