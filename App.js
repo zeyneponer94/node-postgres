@@ -16,7 +16,7 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
-app.get('/db/readRecords', function(req,res){
+app.get('safe-inlet-65958.herokuapp/db/readRecords', function(req,res){
     dbOperations.getRecords(req,res);
 });
 
