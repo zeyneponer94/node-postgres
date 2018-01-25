@@ -65,10 +65,10 @@
             <center>
                     <div  class="frame well" ng-app="testApp">
                         <div class="box"> 
-                            <img src="images/altus-logo.png" alt="Altus Logo" width="15" height="40">      
+                            <img src="client/images/altus-logo.png" alt="Altus Logo" width="15" height="40">      
                         </div>
                         <div class="boxx"> 
-                            <img src="images/grundig-logo.png" alt="Grundig Logo" width="100" height="50">    
+                            <img src="client/images/grundig-logo.png" alt="Grundig Logo" width="100" height="50">    
                        </div>
                        <div class="box2">            
                            <h2><font face="verdana" size="2">Altus ve Grundig İş Emri Girişine Hoşgeldiniz.</font></h2>
@@ -116,7 +116,7 @@
             myApp.controller('testController', ['$scope' ,'$http',  function($scope,$http) {
                 
                 $scope.getAllRec = function(){ 
-                     $http({method: 'GET', url: '/db/getRecords'}).
+                     $http({method: 'GET', url: '/db/readRecords'}).
                         success(function(data, status) { 
                               $scope.dataset = data; 
                         }).
