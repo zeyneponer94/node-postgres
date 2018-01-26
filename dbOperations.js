@@ -90,14 +90,23 @@ module.exports = {
          
         var query = client.query( "select * from salesforce.Customer__c Where salesforce.username__c ='"+req.query.username_id+"' and salesforce.password__c ='"+req.query.password_id+"'");
 
+
+        query.on("row", function (row, result) { 
+            result.addRow(row); 
+        });
+
         query.on("error", function (err) {          
             throw err;
-        })
-        .on("end", function (result) {          
-            client.end(); 
-            res.write('Success');
+        });
+
+        query.on("end", function (result) {          
+            client.end();
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+            res.write(JSON.stringify(result.rows, null, "    ") + "\n");
             res.end();  
-        }); 
+        });
+
+
 
     },
     
