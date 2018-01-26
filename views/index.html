@@ -143,9 +143,9 @@
                 }
                 
                 $scope.addRecord = function(){ 
-                    $http({method: 'GET', url: '/db/addRecord?fUsername='+$scope.username_id}).
+                    $http({method: 'GET', url: '/db/addRecord?fusername='+$scope.username_id}).
                         success(function(data, status) { 
-                                alert('Record Added');
+                                alert($scope.username_id);
                                 //$scope.getAllRec();
                         });  
                 }
