@@ -43,20 +43,20 @@ module.exports = {
     },
     
      delRecord : function(req, res){
-     /*   var pg = require('pg');   
+        var pg = require('pg');   
         
         var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
          
-        var query = client.query( "Delete from employee Where id ="+req.query.id);
+        var query = client.query( "Delete from salesforce.user Where username ="+username_id);
     
         query.on("end", function (result) {          
             client.end(); 
             res.write('Success');
             res.end();  
-        }); */
+        }); 
 
     },
     
