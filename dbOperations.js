@@ -92,7 +92,9 @@ module.exports = {
         var query = client.query( "select salesforce.Customer__c Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'");
 
         query.on("error", function (err) {          
-            throw err;
+            client.end(); 
+            res.write('Error');
+            res.end();  
         })
         .on("end", function (result) {          
             client.end(); 
