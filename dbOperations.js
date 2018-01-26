@@ -32,7 +32,7 @@ module.exports = {
 
         client.connect();
         var query = client.query("insert into salesforce.User (username) "+ 
-                                "values ('"+req.query.username_id+"')");
+                                "values ('"+req.query.username+"')");
     
         query.on("end", function (result) {          
             client.end(); 
