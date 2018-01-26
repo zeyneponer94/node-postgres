@@ -31,8 +31,8 @@ module.exports = {
         var client = new pg.Client(conString);
 
         client.connect();
-        var query = client.query("insert into salesforce.User (username, Email, Alias, TimeZoneSidKey, LocaleSidKey, EmailEncodingKey, ProfileId, LanguageLocaleKey) "+ 
-                                "values ('"+req.query.username_id+"', 'zynp_sk@hotmail.com', 'deneme', 'Amerika', 'en_US', 'utf-8', '15', 'heyo')");
+        var query = client.query("insert into salesforce.User (username)"+ 
+                                "values ('"+req.query.username_id+"'");
     
 
        
