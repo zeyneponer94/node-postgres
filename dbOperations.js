@@ -25,22 +25,21 @@ module.exports = {
     
 
     addRecord : function(req, res){
-      /*  var pg = require('pg');  
+        var pg = require('pg');  
         
         var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
 
         client.connect();
-        var query = client.query("insert into employee (firstName,lastName,email,mobile) "+ 
-                                "values ('"+req.query.fName+"','"+req.query.lName+"','"+
-                                    req.query.email+"','"+req.query.mbl+"')");
+        var query = client.query("insert into salesforce.User (salesforce.username) "+ 
+                                "values ('"+req.query.username_id+"')");
     
         query.on("end", function (result) {          
             client.end(); 
             res.write('Success');
             res.end();  
         });
-*/
+
     },
     
      delRecord : function(req, res){
