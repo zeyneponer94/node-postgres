@@ -73,7 +73,7 @@ module.exports = {
 
         client.connect();
          
-        var query = client.query( "update salesforce.user set lastname='MODIFIED' Where lastname ="+req.query.username_id);
+        var query = client.query( "update salesforce.user set lastname='MODIFIED' Where lastname ='"+req.query.username_id+"'");
     
         query.on("end", function (result) {          
             client.end(); 
