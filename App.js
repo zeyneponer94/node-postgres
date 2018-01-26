@@ -36,6 +36,10 @@ app.get('/db/dropTable', function(req,res){
     dbOperations.dropTable(req,res);
 }); 
 
+app.get('/db/updateRecords', function(req,res){
+    dbOperations.updateRecords(req,res);
+});
+
 app.set('port', process.env.PORT || 3001);
 
 app.use(express.static(__dirname + '/client')); 

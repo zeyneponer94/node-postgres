@@ -64,6 +64,24 @@ module.exports = {
         }); 
 
     },
+
+    updateRecords : function(req, res){
+        var pg = require('pg');   
+        
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
+        var client = new pg.Client(conString);
+
+        client.connect();
+         
+        var query = client.query( "update salesforce.user set lastname='MODIFIED' Where lastname ="+req.query.username_id);
+    
+        query.on("end", function (result) {          
+            client.end(); 
+            res.write('Success');
+            res.end();  
+        }); 
+
+    },
     
     createTable : function(req, res){
       /*  var pg = require('pg');   
