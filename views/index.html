@@ -153,8 +153,12 @@
                 $scope.addRecord = function(){ 
                     $http({method: 'GET', url: '/db/addRecord?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
+                            alert("success");
                                 //$scope.getAllRec();
-                        });  
+                        }).
+                        error(function(data, status) {
+                          alert("fail");
+                      }); 
                 }
                 
                 $scope.delRecord = function(){

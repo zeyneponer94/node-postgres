@@ -35,9 +35,7 @@ module.exports = {
         
         var query = client.query("insert into salesforce.Customer__c (username__c, password__c) "+ 
         "values ('"+req.query.username_id+"','"+req.query.password_id+"'");
-    
-
-       
+           
 
         query.on("end", function (result) {          
             client.end(); 
