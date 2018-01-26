@@ -97,7 +97,7 @@
                                 <label></label>                                                                
                             </section>                                                         
                             <section>                                                                                                
-                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="submit()">GİRİŞ</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="addRecord()">GİRİŞ</button>
                             </section>    
                         </div>         
                     </form>         
@@ -151,7 +151,7 @@
                 }
                 
                 $scope.addRecord = function(){ 
-                    $http({method: 'GET', url: '/db/addRecord?username_id='+$scope.username_id}).
+                    $http({method: 'GET', url: '/db/addRecord?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
                                 //$scope.getAllRec();
                         });  

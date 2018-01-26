@@ -33,8 +33,8 @@ module.exports = {
         client.connect();
 
         
-        var query = client.query("insert into salesforce.User (username, LastName, Email, Alias, TimeZoneSidKey, LocaleSidKey, EmailEncodingKey, ProfileId, LanguageLocaleKey) "+ 
-        "values ('"+req.query.username_id+"', 'Öner', 'zynp_sk@hotmail.com', 'deneme', 'America/Los_Angeles', 'en_US', 'utf-8', '19', 'heyo')");
+        var query = client.query("insert into salesforce.Customer__c (username__c, password__c) "+ 
+        "values ('"+req.query.username_id+"','"+req.query.password_id+"'");
     
 
        
@@ -91,7 +91,7 @@ module.exports = {
 
         client.connect();
          
-        var query = client.query( "select salesforce.user Where username ='"+req.query.username_id+"' and password='"+req.query.password_id+"'");
+        var query = client.query( "select salesforce.Customer__c Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'");
 
         query.on("error", function (err) {          
             throw err;
