@@ -82,6 +82,27 @@ module.exports = {
         }); 
 
     },
+
+    Search : function(req, res){
+        var pg = require('pg');   
+        
+        var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
+        var client = new pg.Client(conString);
+
+        client.connect();
+         
+        var query = client.query( "select salesforce.user Where username ='"+req.query.username_id+"' and password='"+req.query.password_id+"'");
+
+        query.on("error", function (err) {          
+            throw err;
+        })
+        .on("end", function (result) {          
+            client.end(); 
+            res.write('Success');
+            res.end();  
+        }); 
+
+    },
     
     createTable : function(req, res){
       /*  var pg = require('pg');   

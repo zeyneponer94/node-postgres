@@ -40,6 +40,10 @@ app.get('/db/updateRecord', function(req,res){
     dbOperations.updateRecords(req,res);
 });
 
+app.get('/db/Search', function(req,res){
+    dbOperations.Search(req,res);
+});
+
 app.set('port', process.env.PORT || 3001);
 
 app.use(express.static(__dirname + '/client')); 
