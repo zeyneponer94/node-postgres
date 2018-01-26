@@ -36,7 +36,7 @@ app.get('/db/dropTable', function(req,res){
     dbOperations.dropTable(req,res);
 }); 
 
-app.get('/db/updateRecords', function(req,res){
+app.get('/db/updateRecord', function(req,res){
     dbOperations.updateRecords(req,res);
 });
 
