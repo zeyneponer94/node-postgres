@@ -50,7 +50,7 @@ module.exports = {
 
         client.connect();
          
-        var query = client.query( "Delete from salesforce.user Where username ="+username_id);
+        var query = client.query( "Delete from salesforce.user Where id ="+username_id);
     
         query.on("end", function (result) {          
             client.end(); 
