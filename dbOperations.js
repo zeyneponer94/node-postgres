@@ -34,8 +34,7 @@ module.exports = {
 
         
         var query = client.query("insert into salesforce.Customer__c (username__c, password__c) "+ 
-        "values ('"+req.query.username_id+"','"+req.query.password_id+"'");
-           
+        "values ('"+req.query.username_id+"','"+req.query.password_id+"')");       
 
         query.on("end", function (result) {          
             client.end(); 
@@ -92,9 +91,7 @@ module.exports = {
         var query = client.query( "select salesforce.Customer__c Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'");
 
         query.on("error", function (err) {          
-            client.end(); 
-            res.write('Error');
-            res.end();  
+            throw err;
         })
         .on("end", function (result) {          
             client.end(); 
