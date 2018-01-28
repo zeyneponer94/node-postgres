@@ -97,7 +97,7 @@
                                 <label></label>                                                                
                             </section>                                                         
                             <section>                                                                                                
-                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="submit()">GİRİŞ</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="getAllRec()">GİRİŞ</button>
                             </section>    
                         </div>         
                     </form>         
@@ -110,12 +110,12 @@
                                         <table class="table table-bordered table-hover table-condensed">
                                             <tbody>
                                                 <tr ng-repeat="item in dataset">
-                                                    <td> {{item.username_id}} </td>
-                                                    <td> {{item.password_id}} </td>
+                                                    <td> {{<item class="salesforce"></item>username__c}} </td>
+                                                    <td> {{<item class="salesforce"></item>password__c}} </td>
                                                 </tr>
                                             </tbody>
                                         </table>     
-                                </div>                           
+                                </div>                          
                          
                         
         <script src="lib/angular.min.js"></script>         
