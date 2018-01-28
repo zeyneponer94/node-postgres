@@ -110,8 +110,8 @@
                                         <table class="table table-bordered table-hover table-condensed">
                                             <tbody>
                                                 <tr ng-repeat="item in dataset">
-                                                    <td> {{item.username__c}} </td>
-                                                    <td> {{item.password__c}} </td>
+                                                    <td> {{item.username_id}} </td>
+                                                    <td> {{item.password_id}} </td>
                                                 </tr>
                                             </tbody>
                                         </table>     
@@ -132,7 +132,7 @@
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
                             $scope.dataset = data;
-                            alert(data);
+                            alert(data.username_id,data.password_id);
                         }).
                         error(function(data, status) {
                           alert("fail");
