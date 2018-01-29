@@ -7,16 +7,13 @@
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
-            var i = 0;
-            while(data[i].Name!=null)
-            {
+     
               $scope.data = 
               [
-                {name: ""+data[i].Name}
+                {name: ""+data[0].Name}
               ];  
 
-              i++;
-            }               
+                         
         }).
         error(function(data, status) {
           $scope.dataset = data || "Request failed "; 
