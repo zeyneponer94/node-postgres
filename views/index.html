@@ -1,123 +1,41 @@
 <html>
-    <style>
-        img
-        {
-            width:25%;
-        }
-        .button 
-        {
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        .altus_logo
-        {
-            position: relative;
-            top: -65;
-            left: -65;
-            width: 400px;
-            margin: 100px auto;
-        }
-        .grundig_logo
-        {
-            position: relative;
-            top: -205;
-            left: 85;
-            width: 400px;
-            margin: 100px auto;
-        }
-        .welcome
-        {
-            position: relative;
-            top: -265;
-            left: 0;
-            width: 400px;
-            margin: 100px auto;
-        }
-        .input
-        {
-            position: relative;
-            top: -325;
-            left: 0;
-            width: 300px;
-            margin: 100px auto;
-        }
-        .rounded
-        {
-            border-radius:5px;
-            -moz-border-radius:5px;
-            -webkit-border-radius:5px;
-        }
-        .frame
-        {
-            width: 430px; margin:150px auto; border:1px solid rgb(255, 254, 254); height:450px; background: #ffffff;
-        }
-    </style>
-    <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet"> 
-        <link rel="icon"  type="image/icon"  href="Node.ico" />
-    </head>
-    <body style="background-color:#D3D3D3;">
-        <center>
-            <div  class="frame well" ng-app="testApp">
-                <div class="altus_logo"> 
-                    <img src="/images/altus-logo.png" alt="Altus Logo" width="15" height="40">      
-                </div>
-                <div class="grundig_logo"> 
-                    <img src="/images/grundig-logo.png" alt="Grundig Logo" width="100" height="50">    
-                </div>
-                <div class="welcome">            
-                    <h2><font face="verdana" size="2">Altus ve Grundig İş Emri Girişine Hoşgeldiniz.</font></h2>
-                    <h2><font face="verdana" size="2"> Şifreniz ile güvenli giriş yapabilirsiniz.</font></h2>
-                </div>    
-                <div class="input" ng-controller="testController">                        
-                    <form >
-                        <div class="form-group" >
-                            <section>            
-                                <h2><font face="verdana" size="2">Kullanıcı Adı</font></h2>                            
-                            </section>
-                            <section>                                            
-                                <input type="text" name="username" id="username" class="form-control rounded" ng-model="username_id"/>
-                            </section>            
-                            <section>                                                
-                                <h2><font face="verdana" size="2">Şifre</font></h2>                            
-                            </section>  
-                            <section>                                                                
-                                <input type="password" name="password" id="password" class="form-control rounded" ng-model="password_id"/>
-                            </section>   
-                            <section>   
-                                <label></label>
-                                <label></label>                                                                
-                            </section>                                                         
-                            <section>                                                                                                
-                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="redirect()">GİRİŞ</button>
-                            </section>    
-                        </div>         
-                    </form>         
-                </div>
-            </div>
-        </center>
-                            
-                            <!--
-                                <div class="row clearfix"> 
-                                        <table class="table table-bordered table-hover table-condensed">
-                                            <tbody>
-                                                <tr ng-repeat="item in dataset">
-                                                    <td> {{<item class="salesforce"></item>username__c}} </td>
-                                                    <td> {{<item class="salesforce"></item>password__c}} </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>     
-                                </div>      -->                    
-                         
-                        
+       <head>
+           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+           <link rel="stylesheet" type="text/css" href="css/custom.css">
+           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+       </head>
+       <body style="background-color:#D3D3D3;">
+               <div class="container main-section" ng-app="testApp">
+                       <div class="row">
+                           <div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
+                               <div class="row">
+                                   <div class="col-md-12 col-sm-12 col-xs-12 user-image-section">
+                                       <img src="images/altus-logo.png">    
+                                   </div>
+                                   <div class="col-md-12 col-sm-12 col-xs-12 user-image-section-2">
+                                       <img src="images/grundig-logo-2.png">                                                                                                           
+                                   </div>
+                                   <div class="col-md-12 col-sm-12 col-xs-12 user-welcoming ">
+                                       <p>Altus ve Grundig İş Emri Girişine Hoşgeldiniz.</p>                                        
+                                       <p> Şifreniz ile güvenli giriş yapabilirsiniz.</p>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12 col-xs-12 user-login-box" ng-controller="testController">
+                                       <div class="form-group">
+                                             <input type="text" name="username" id="username" class="form-control" placeholder="Kullanıcı Adı" ng-model="username_id"/>                                            
+                                       </div>
+                                       <div class="form-group">
+                                             <input type="password" name="password" id="password" class="form-control" placeholder="Şifre" ng-model="password_id"/>                                            
+                                       </div>
+                                       <button type="button" class="btn btn-default" ng-click="redirect()">Giriş</button>                                    
+                                   </div>
+                                   <div class="col-md-12 col-sm-12 col-xs-12 last-part">
+                                       <p>© 2018 Arçelik All rights reserved.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>   
+                                 
         <script src="lib/angular.min.js"></script>         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>       
         <script src="lib/bootstrap.min.js"></script>                 
@@ -205,6 +123,6 @@
                 }           
             }]);
 
-        </script>  
-    </body>
-</html>
+        </script>          
+       </body>
+   </html>
