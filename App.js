@@ -9,6 +9,14 @@ var express = require('express'),
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
 
+app.set('port', process.env.PORT || 3001);
+
+app.use(express.static(__dirname + '/client')); 
+app.use(errorHandler());
+app.listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
+});
+
 app.set('views', __dirname + '/views') ;
  
 
@@ -17,12 +25,9 @@ app.get('/' , function(req,res) {
 } );
 
 app.get('/workorder' , function(req,res) {
-    res.redirect('/redirect'); 
-});
-
-
-app.get('/redirect', function(req, res) {
-    res.sendFile(__dir_name+"views/redirect.html");
+    res.sendFile(path.resolve(__dirname, '/client', 'views/redirect.html'));
+    
+    //res.sendfile('views/redirect.html'); 
 });
 
 app.get('/db/readRecords', function(req,res){
@@ -57,10 +62,3 @@ app.get('/db/Search', function(req,res){
     dbOperations.Search(req,res);
 });
 
-app.set('port', process.env.PORT || 3001);
-
-app.use(express.static(__dirname + '/client')); 
-app.use(errorHandler());
-app.listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
-});
