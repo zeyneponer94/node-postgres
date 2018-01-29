@@ -19,7 +19,7 @@ app.get('/' , function(req,res) {
 
 app.get('views/redirect.html' , function(req,res) {
     res.sendfile('views/redirect.html');   
-    res.redirect('https://safe-inlet-65958.herokuapp.com/workorder');
+    res.redirect('https://safe-inlet-65958.herokuapp.com/views/redirect.html');
 });
 
 app.get('/db/readRecords', function(req,res){
