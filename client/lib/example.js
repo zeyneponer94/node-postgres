@@ -8,9 +8,9 @@
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
             var i = 0;
-            while(data[i]!=null)
+            while(data[i].Name!=null)
             {
-              $scope.data += 
+              $scope.data = 
               [
                 {name: ""+data[i].Name}
               ];  
