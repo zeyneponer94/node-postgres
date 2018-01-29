@@ -5,6 +5,7 @@
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
+          //Field names are case sensitive. Be careful!
           alert(data[0].name);
           $scope.data = [];                    
           var i = 0;
