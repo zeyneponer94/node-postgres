@@ -8,7 +8,7 @@
           $scope.data = [];                    
           var i = 0;
           while(data.Name[i]!=null){
-            var obj = { name: data.Name[i] };
+            var obj = { name: data[i].Name };
             $scope.data.push(obj);  
             i++;
           }              
