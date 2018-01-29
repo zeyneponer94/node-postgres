@@ -1,5 +1,5 @@
-/*    app = angular.module('myApp', [])
-    app.controller('myController', function ($scope, $http,$q) {
+    app = angular.module('myApp', [])
+    app.controller('myController', function ($scope, $http) {
         $scope.activation = true;  
         $scope.query = false;      
         //connecting to azure db, getting required records from specified table and displaying them in selection list
@@ -16,7 +16,8 @@
         });
         //when user selects a product from selection list, ng-change calls that function to get the work order types available for chosen product
         $scope.update = function() {
-          $http({
+          alert("update");
+        /*  $http({
             method: "GET", 
             url: 'https://thworkorderfapp.azurewebsites.net/api/HttpTrigger_WorkOrderType',
             params: {name:$scope.singleSelect}          
@@ -29,13 +30,13 @@
                 $scope.workordertype.push(obj);  
                 i++;
               }
-          });          
+          });     */     
        }
 
        $scope.queryWorkOrder = function () {
          $scope.activation = false;
          $scope.activation_query=true;
-         $scope.query=false;*/
+         $scope.query=false;
 /*
          $http({
           method: "GET",        
@@ -46,10 +47,10 @@
         })
        .error(function (response) {
           $scope.data = response.data; 
-        }) 
+        }) */
 
-      }*/
-/*      $scope.createWorkOrder = function () {
+      }
+      $scope.createWorkOrder = function () {
         $scope.activation = true;
         $scope.activation_query=false;
       }
@@ -58,13 +59,13 @@
     app.controller('updatingDB', function ($scope, $http, $q) {
       //sends customer info as parameter to check whether operating user exists or not. if not new customer is created.
       $scope.customer = function () {
+          alert("customer");
           $http({
             method: "GET",        
             url: 'https://thworkorderfapp.azurewebsites.net/api/UpdatingDB', 
             params: {name:$scope.name_id, surname:$scope.surname_id, phone:$scope.phone_id, email:$scope.email_id}
           }) 
           .then(function(response){ 
-            alert(1);
             $scope.data = response.data;
           })
          
@@ -72,6 +73,7 @@
    });
 
    app.controller('DatepickerDemoCtrl', function ($scope) {
+     alert("date");
     $scope.today = function() {
       $scope.dt = new Date();
     };
@@ -82,4 +84,4 @@
     };
   
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  });*/
+  });
