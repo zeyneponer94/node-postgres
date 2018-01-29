@@ -3,14 +3,12 @@
         $scope.activation = true;  
         $scope.query = false;      
 
-
-
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
      
               $scope.data = 
               [
-                {name: ""+data[0].Name}
+                {name: ""+data.Name[0]}
               ];  
 
                          
