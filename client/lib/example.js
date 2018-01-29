@@ -10,7 +10,7 @@
             var i = 0;
             while(data[i]!=null)
             {
-              $scope.data = 
+              $scope.data += 
               [
                 {name: ""+data[i].Name}
               ];  

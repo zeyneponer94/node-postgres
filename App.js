@@ -24,6 +24,10 @@ app.get('/db/readRecords', function(req,res){
     dbOperations.getRecords(req,res);
 });
 
+app.get('/db/getProductList', function(req,res){
+    dbOperations.getProductList(req,res);
+});
+
 app.get('/db/addRecord', function(req,res){
     dbOperations.addRecord(req,res);
 });
