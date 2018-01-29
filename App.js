@@ -17,8 +17,12 @@ app.get('/' , function(req,res) {
 } );
 
 app.get('/workorder' , function(req,res) {
-    res.sendfile('views/redirect.html'); 
-    res.redirect('https://safe-inlet-65958.herokuapp.com/workorder');
+    res.redirect('/redirect'); 
+});
+
+
+app.get('/redirect', function(req, res) {
+    res.sendFile(__dir_name+"views/redirect.html");
 });
 
 app.get('/db/readRecords', function(req,res){
