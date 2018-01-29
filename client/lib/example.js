@@ -5,13 +5,13 @@
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
-              alert(data[0].Name);   
-      /*        $scope.data = 
-              [
-                {name: ""+data.Name[0]}
-              ];  
-*/
-                         
+          $scope.data = [];                    
+          var i = 0;
+          while(data.Name[i]!=null){
+            var obj = { name: data.Name[i] };
+            $scope.data.push(obj);  
+            i++;
+          }              
         }).
         error(function(data, status) {
           $scope.dataset = data || "Request failed "; 
