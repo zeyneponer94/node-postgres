@@ -29,7 +29,7 @@ app.get('/workorder' , function(req,res) {
 
     console.log(JSON.stringify(req.headers)); //to see all headers that heroku adds
     if(req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === "http") {
-      res.redirect("https://" + req.headers.host + "/views/redirect.html");
+      res.redirect("https://" + req.headers.host + "/workorder");
     }
     else {
       //the rest of your logic to handle this route
