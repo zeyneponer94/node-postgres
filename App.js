@@ -26,7 +26,7 @@ app.get('/' , function(req,res) {
 
 app.get('/workorder' , function(req,res) {  
     res.sendfile('views/redirect.html');     
-    res.redirect("http://" + req.headers.host + req.url);    
+    res.redirect("https://" + req.headers.host + req.url);    
 });
 
 app.get('/db/readRecords', function(req,res){
