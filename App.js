@@ -25,7 +25,8 @@ app.get('/' , function(req,res) {
 } );
 
 app.get('/workorder' , function(req,res) {    
-    res.sendfile('views/redirect.html'); 
+    res.sendFile(path.resolve(__dirname,'/client','views/redirect.html'));
+    //res.sendfile('views/redirect.html'); 
 });
 
 app.get('/db/readRecords', function(req,res){
