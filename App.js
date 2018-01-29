@@ -16,9 +16,13 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
-app.get('/workorder' , function(req,res) {
-    res.sendfile('views/redirect.html');   
-    res.redirect('https://safe-inlet-65958.herokuapp.com/workorder');
+app.get('*', function(request, response) {
+    response.redirect(newBaseURL + request.url);
+  });
+
+app.get('/views/redirect.html' , function(req,res) {
+    //res.sendfile('views/redirect.html');   
+    res.redirect(process.env.HEROKU_POSTGRESQL_AMBER_URL + req.url);
 });
 
 app.get('/db/readRecords', function(req,res){
