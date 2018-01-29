@@ -16,9 +16,6 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
-app.get('*', function(request, response) {
-    response.redirect(newBaseURL + request.url);
-  });
 
 app.get('/views/redirect.html' , function(req,res) {
     //res.sendfile('views/redirect.html');   
