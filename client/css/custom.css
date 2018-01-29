@@ -1,6 +1,68 @@
-textarea {
-    font-family: 'Menlo', 'Courier New', 'Courier';
+body{
+    background: -webkit-linear-gradient(to right, rgb(255, 63, 194), rgb(16, 26, 99));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(255, 63, 194), rgb(16, 26, 99)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+    background: rgb(197, 196, 196);  
+    background-size:100% 100%;
+    bottom:0px;
+    top:0px;
+    margin: 0px;
+    position:absolute;
     width: 100%;
-    margin: 4px 0px 4px 0px;
-    resize: none;
+}
+.main-section{
+    bottom:0px;
+    top:0px;
+    margin: 0px;
+    position:absolute;
+    width: 100%;
+}
+.user-login-header,.login-image-main{
+    margin-top: 15px;
+}
+.user-login-header h1{
+    font-size: 45px;
+    color:#fff;
+}
+.user-login-header p,.last-part p{
+    color:#c9c5c7;
+}
+.user-login-header span{
+    color:#fff;
+    font-weight: 600;
+}
+.login-image-main{
+    padding: 30px;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow: 0 0 5px 0 #fff;
+}
+.user-image-section img{
+    background-color: rgb(255, 255, 255);
+    padding:5px;
+    height:75px;
+    width:150px;
+}
+.user-image-section-2 {
+    background-color: rgb(255, 255, 255);
+    padding:35px;
+    height:75px;
+    width:150px;
+    left: 15;
+}
+.user-welcoming{
+    padding:20px;
+}
+.user-login-box,.last-part{
+    padding:20px;
+}
+.user-login-box button,.user-login-box button:hover{
+    background: -webkit-linear-gradient(to right, rgb(255, 63, 194), rgb(16, 26, 99));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(255, 63, 194), rgb(16, 26, 99));
+    width: 100%;
+    color:#fff;
+    font-weight:600;
+}
+.last-part a{
+    text-decoration: none;
+    color: rgb(10, 163, 35);
 }
