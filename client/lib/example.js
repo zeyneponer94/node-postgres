@@ -5,9 +5,10 @@
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
+          alert(data[0].Name);
           $scope.data = [];                    
           var i = 0;
-          while(data.Name[i]!=null){
+          while(data[i].Name!=null){
             var obj = { name: data[i].Name };
             $scope.data.push(obj);  
             i++;
