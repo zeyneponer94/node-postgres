@@ -3,18 +3,25 @@
         $scope.activation = true;  
         $scope.query = false;      
 
-        //connecting to azure db, getting required records from specified table and displaying them in selection list
-     /*   $http({
-          method: "GET", 
-          url: 'https://thworkorderfapp.azurewebsites.net/api/getProductList',           
-        }) 
-        .then(function(response){ 
-            $scope.data = 
+
+
+        $http({method: 'GET', url: '/db/getProductList'}).
+        success(function(data, status) { 
+            var i = 0;
+            while(data[i]!=null)
+            {
+              $scope.data = 
               [
-                {name: ""+response.data[0]},
-                {name: ""+response.data[1]}
-              ];       
-        }); */
+                {name: ""+data[i].Name}
+              ];  
+
+              i++;
+            }               
+        }).
+        error(function(data, status) {
+          $scope.dataset = data || "Request failed "; 
+        });
+
         
         //when user selects a product from selection list, ng-change calls that function to get the work order types available for chosen product
         $scope.update = function() {
