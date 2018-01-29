@@ -5,7 +5,7 @@
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
-              alert(data.Name);   
+              alert(data[0].Name);   
       /*        $scope.data = 
               [
                 {name: ""+data.Name[0]}
