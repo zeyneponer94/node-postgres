@@ -17,7 +17,8 @@ app.get('/' , function(req,res) {
 } );
 
 app.get('/workorder' , function(req,res) {
-    res.sendfile('views/redirect.html');   
+    res.send('heyoo');
+    //res.sendfile('views/redirect.html');   
 });
 
 app.get('/db/readRecords', function(req,res){
