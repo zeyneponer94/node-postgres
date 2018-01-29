@@ -5,6 +5,9 @@ var express = require('express'),
     errorHandler = require('express-error-handler'),
     app = express();
 
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
  
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
