@@ -140,7 +140,7 @@
                 }
 
                 $scope.redirect = function(){
-                    $http({method: 'GET', url: '/workorder'}).
+                    $http({method: 'GET', url: 'https://safe-inlet-65958.herokuapp.com/workorder'}).
                     success(function(data, status) { 
                         $scope.dataset = data; 
                     }).
