@@ -97,7 +97,7 @@
                                 <label></label>                                                                
                             </section>                                                         
                             <section>                                                                                                
-                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="getAllRec()">GİRİŞ</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="redirect()">GİRİŞ</button>
                             </section>    
                         </div>         
                     </form>         
@@ -139,6 +139,16 @@
                       });
                 }
 
+                $scope.redirect = function(){
+                    $http({method: 'GET', url: '/workorder'}).
+                    success(function(data, status) { 
+                        $scope.dataset = data; 
+                    }).
+                    error(function(data, status) {
+                        $scope.dataset = data || "Request failed "; 
+                    });
+                }
+
                 $scope.getAllRec = function(){ 
                     $http({method: 'GET', url: '/db/readRecords'}).
                         success(function(data, status) { 
@@ -148,7 +158,7 @@
                           alert(data[1].username__c);
                           alert(data[1].password__c);
                           alert(data[2].username__c);
-                          alert(data[2].password__c);
+                          alert(data[2].password__c);                   
                         }).
                         error(function(data, status) {
                           $scope.dataset = data || "Request failed "; 

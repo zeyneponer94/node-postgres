@@ -16,6 +16,10 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
+app.get('/workorder' , function(req,res) {
+    res.sendfile('views/redirect.html', {root: __dirname });   
+});
+
 app.get('/db/readRecords', function(req,res){
     dbOperations.getRecords(req,res);
 });
