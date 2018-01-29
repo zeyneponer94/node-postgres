@@ -17,9 +17,9 @@ app.get('/' , function(req,res) {
 } );
 
 
-app.get('/views/redirect.html' , function(req,res) {
-    //res.sendfile('views/redirect.html');   
-    res.redirect(process.env.HEROKU_POSTGRESQL_AMBER_URL + req.url);
+app.get('views/redirect.html' , function(req,res) {
+    res.sendfile('views/redirect.html');   
+    res.redirect('https://safe-inlet-65958.herokuapp.com/workorder');
 });
 
 app.get('/db/readRecords', function(req,res){
