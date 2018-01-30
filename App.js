@@ -21,14 +21,14 @@ app.get('/' , function(req,res) {
 
 app.get('/workorder' , function(req,res) {  
     res.sendfile('views/redirect.html');     
-
+/*
     console.log(JSON.stringify(req.headers)); //to see all headers that heroku adds
     if(req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === "http") {
       res.redirect("https://" + req.headers.host + "/workorder");
     }
     else {
       //the rest of your logic to handle this route
-    }
+    }*/
 });
 
 app.get('/db/readRecords', function(req,res){
