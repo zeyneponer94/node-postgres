@@ -27,12 +27,12 @@
             $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].productcode}).
             success(function(data, status) { 
               alert("success2");
-              alert(data[0].id);
-              alert(data[1].id);              
+              alert(data[0].name);
+              alert(data[1].name);              
               $scope.workordertype = [];                    
               var i = 0;
               while(data[i].id!=null){
-                var obj = { name: data[i].id };
+                var obj = { name: data[i].name };
                 $scope.workordertype.push(obj);  
                 i++;
               } 
