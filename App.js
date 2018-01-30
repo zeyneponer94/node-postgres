@@ -17,7 +17,7 @@ app.get('/' , function(req,res) {
 });
 
 app.get('/workorder' , function(req,res) {  
-    //res.sendfile('views/redirect.html');     
+    res.sendfile('views/redirect.html');     
 /*
     console.log(JSON.stringify(req.headers)); //to see all headers that heroku adds
     if(req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === "http") {
