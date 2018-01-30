@@ -28,7 +28,7 @@
     "url": "https://github.com/"
   },
   "engines": {
-    "node": "6.4.1"
+    "node": "6.11.1"
   },
   "keywords": [
     "Salesforce",
