@@ -16,9 +16,8 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
-app.post('/workorder' , function(req,res) {  
+app.get('/workorder' , function(req,res) {  
     res.sendfile('views/redirect.html'); 
-    res.redirect("https://" + req.headers.host + "/workorder");
     
 /*
     console.log(JSON.stringify(req.headers)); //to see all headers that heroku adds
