@@ -6,7 +6,6 @@
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
           //Field names are case sensitive. Be careful!
-          alert(data[0].name);
           $scope.data = [];                    
           var i = 0;
           while(data[i].name!=null){
@@ -22,22 +21,41 @@
         
         //when user selects a product from selection list, ng-change calls that function to get the work order types available for chosen product
         $scope.update = function() {
-          alert("update");
-        /*  $http({
-            method: "GET", 
-            url: 'https://thworkorderfapp.azurewebsites.net/api/HttpTrigger_WorkOrderType',
-            params: {name:$scope.singleSelect}          
-          }) 
-          .then(function(response){ 
+
+          $http({method: 'GET', url: '/db/RelatedObjects?selectedProduct='+$scope.singleSelect}).
+          success(function(data, status) { 
+            alert("success");
+
+
+            $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+$scope.data[0].productcode}).
+            success(function(data, status) { 
+              alert("success2");
               $scope.workordertype = [];                    
               var i = 0;
-              while(response.data[i]!=null){
-                var obj = { name: response.data[i] };
+              while(data[i].id!=null){
+                var obj = { name: data[i].id };
                 $scope.workordertype.push(obj);  
                 i++;
               }
-          });     */     
+            }).
+            error(function(data, status) {
+              alert("fail2");
+            }); 
+
+        /*    $scope.workordertype = [];                    
+            var i = 0;
+            while(data[i].name!=null){
+              var obj = { name: data[i].name };
+              $scope.workordertype.push(obj);  
+              i++;
+            }*/
+          }).
+          error(function(data, status) {
+            alert("fail");
+          }); 
+
        }
+
 
        $scope.queryWorkOrder = function () {
          $scope.activation = false;
@@ -79,7 +97,6 @@
    });
 
    app.controller('DatepickerDemoCtrl', function ($scope) {
-     alert("date");
     $scope.today = function() {
       $scope.dt = new Date();
     };

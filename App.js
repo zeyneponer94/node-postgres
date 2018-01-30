@@ -28,6 +28,16 @@ app.get('/workorder' , function(req,res) {
     }*/
 });
 
+
+
+app.get('/db/RelatedObjects', function(req,res){
+    dbOperations.RelatedObjects(req,res);
+});
+
+app.get('/db/RelatedObjects_2', function(req,res){
+    dbOperations.RelatedObjects_2(req,res);
+});
+
 app.get('/db/readRecords', function(req,res){
     dbOperations.getRecords(req,res);
 });
