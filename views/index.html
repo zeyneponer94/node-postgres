@@ -58,10 +58,8 @@
                         alert("success");
                         alert(response.data);
                         $scope.redirect();
-                    })
-                    .error(function (response) {
-                        alert("fail");
                     });
+
 /*
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
