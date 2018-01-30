@@ -42,7 +42,7 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select * from salesforce.Asset");
+        var query = client.query("select * from salesforce.PricebookEntry");
 
         
         query.on("row", function (row, result) { 

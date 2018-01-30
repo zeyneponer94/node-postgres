@@ -38,13 +38,7 @@
             error(function(data, status) {
             }); 
 
-        /*    $scope.workordertype = [];                    
-            var i = 0;
-            while(data[i].name!=null){
-              var obj = { name: data[i].name };
-              $scope.workordertype.push(obj);  
-              i++;
-            }*/
+
           }).
           error(function(data, status) {
           }); 
