@@ -9,9 +9,6 @@ var express = require('express'),
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
 
-app.set('port', process.env.PORT || 3001);
-
-
 app.set('views', __dirname + '/views') ;
  
 
@@ -63,6 +60,7 @@ app.get('/db/Search', function(req,res){
     dbOperations.Search(req,res);
 });
 
+app.set('port', process.env.PORT || 3001);
 app.use(express.static(__dirname + '/client')); 
 app.use(errorHandler());
 app.listen(app.get('port'), function () {

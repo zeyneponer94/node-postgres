@@ -110,14 +110,11 @@ module.exports = {
         var conString = process.env.HEROKU_POSTGRESQL_AMBER_URL;
         var client = new pg.Client(conString);
         client.connect();
-        var query = client.query( "select * from salesforce.Customer__c Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'");
+        var query = client.query( "select * from salesforce.Customer__c Where salesforce.username__c ='"+req.query.username_id+"' and salesforce.password__c ='"+req.query.password_id+"'");
         var count = 0;
         query.on("row", function (row, result) { 
             result.addRow(row); 
             count++;
-        });
-        query.on("error", function (err) {          
-            throw err;
         });
         query.on("end", function (result) {          
             client.end();
