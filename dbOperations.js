@@ -10,7 +10,7 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select * from salesforce.Product2 where Name="+req.query.singleSelect);
+        var query = client.query("select * from salesforce.Product2 where name="+req.query.singleSelect);
 
 
         var count = 0;

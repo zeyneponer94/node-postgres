@@ -9,7 +9,7 @@
           $scope.productlist = [];                    
           var i = 0;
           while(data[i].name!=null){
-            var obj = { name: data[i].Name };
+            var obj = { name: data[i].name };
             $scope.productlist.push(obj);  
             i++;
           }              
