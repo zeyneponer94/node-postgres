@@ -29,7 +29,7 @@
               alert("success2");
               $scope.workordertype = [];                    
               var i = 0;
-              while(data[i].id!=null){
+              while(data[i].Id!=null){
                 var obj = { name: data[i].Id };
                 $scope.workordertype.push(obj);  
                 i++;
