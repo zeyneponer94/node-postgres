@@ -26,7 +26,7 @@
                                        <div class="form-group">
                                              <input type="password" name="password" id="password" class="form-control" placeholder="Şifre" ng-model="password_id"/>                                            
                                        </div>
-                                       <button type="button" class="btn btn-default" ng-click="redirect()">Giriş</button>                                    
+                                       <button type="button" class="btn btn-default" ng-click="submit()">Giriş</button>                                    
                                    </div>
                                    <div class="col-md-12 col-sm-12 col-xs-12 last-part">
                                        <p>© 2018 Arçelik All rights reserved.</p>
@@ -47,6 +47,7 @@
             myApp.controller('testController', ['$scope' ,'$http','$window',  function($scope,$http,$window) {
                 $scope.username_id = '';
                 $scope.password_id = '';
+                $window.location = '' ;
 
                 $scope.submit = function(){ 
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
@@ -63,7 +64,8 @@
 
                 $scope.redirect = function(){
                     
-                    $window.location = "https://safe-inlet-65958.herokuapp.com";
+                    //$window.location = "https://safe-inlet-65958.herokuapp.com";
+
                     $http({method: 'GET', url: '/workorder'}).
                     success(function(data, status) {  
                         alert("success")      
