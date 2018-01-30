@@ -47,7 +47,7 @@ module.exports = {
         var count = 0;
         
         query.on("row", function (row, result) { 
-            if(row.ProductCode==req.query.productCode)
+            if(row.productcode==req.query.productCode)
                 result.addRow(row); 
                 count++;
         });
