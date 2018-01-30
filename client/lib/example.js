@@ -23,10 +23,6 @@
         $scope.update = function() {
           $http({method: 'GET', url: '/db/RelatedObjects?singleSelect='+$scope.singleSelect}).
           success(function(data, status) { 
-            alert("success heyooo");
-            alert(data.productcode);
-            alert(data);
-/*
 
             $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].productcode}).
             success(function(data, status) { 
@@ -42,7 +38,7 @@
             error(function(data, status) {
               alert("fail2");
             }); 
-*/
+
         /*    $scope.workordertype = [];                    
             var i = 0;
             while(data[i].name!=null){
@@ -52,8 +48,6 @@
             }*/
           }).
           error(function(data, status) {
-            alert(data);
-            alert("fail heyoo");
           }); 
 
        }
