@@ -63,17 +63,17 @@
 
                 $scope.redirect = function(){
 
-                    /*
+                    
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
-                    $http({method: 'GET', url: '/workorder'}).
+                    $http({method: 'POST', url: '/workorder'}).
                     success(function(data, status) {        
                         var url = "https://safe-inlet-65958.herokuapp.com/workorder";
                         $window.location = url;
                     }).
                     error(function(data, status) {
                         $scope.dataset = data || "Request failed "; 
-                    });*/
-
+                    });
+/*
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
                     $http({
                         method: "GET",        
@@ -82,7 +82,7 @@
                     .then(function(response){ 
                         var url = "https://safe-inlet-65958.herokuapp.com/workorder";
                         $window.location = url;
-                    });
+                    });*/
                     
                 }
 
