@@ -21,9 +21,10 @@
         
         //when user selects a product from selection list, ng-change calls that function to get the work order types available for chosen product
         $scope.update = function() {
-          alert($scope.singleSelect);          
           $http({method: 'GET', url: '/db/RelatedObjects?selectedProduct='+$scope.singleSelect}).
           success(function(data, status) { 
+            alert("success heyooo");
+            alert(data);
 /*
 
             $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].productcode}).
@@ -50,7 +51,7 @@
             }*/
           }).
           error(function(data, status) {
-            alert("fail");
+            alert("fail heyoo");
           }); 
 
        }
