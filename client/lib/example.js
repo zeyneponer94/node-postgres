@@ -24,7 +24,7 @@
           alert($scope.singleSelect);          
           $http({method: 'GET', url: '/db/RelatedObjects?selectedProduct='+$scope.singleSelect}).
           success(function(data, status) { 
-
+/*
 
             $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].productcode}).
             success(function(data, status) { 
@@ -35,12 +35,12 @@
                 var obj = { name: data[i].id };
                 $scope.workordertype.push(obj);  
                 i++;
-              }
+              } 
             }).
             error(function(data, status) {
               alert("fail2");
             }); 
-
+*/
         /*    $scope.workordertype = [];                    
             var i = 0;
             while(data[i].name!=null){
