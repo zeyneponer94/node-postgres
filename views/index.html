@@ -51,7 +51,6 @@
                 $scope.submit = function(){ 
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                     success(function(data, status) { 
-                            alert("success");
                             if(data=="0")
                                 alert("no such a user exists")
                             else
@@ -59,11 +58,12 @@
                     }).
                     error(function(data, status) {
                           alert("fail");
-                          //$scope.dataset = data || "Request failed "; 
                     });
                 }
 
                 $scope.redirect = function(){
+
+                    /*
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
                     $http({method: 'GET', url: '/workorder'}).
                     success(function(data, status) {        
@@ -72,21 +72,18 @@
                     }).
                     error(function(data, status) {
                         $scope.dataset = data || "Request failed "; 
-                    });
+                    });*/
 
-
-/*
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
                     $http({
                         method: "GET",        
                         url: '/workorder', 
                     }) 
                     .then(function(response){ 
-                        alert("success");
                         var url = "https://safe-inlet-65958.herokuapp.com/workorder";
                         $window.location = url;
                     });
-                    */
+                    
                 }
 
                 $scope.getAllRec = function(){ 
