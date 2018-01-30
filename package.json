@@ -12,7 +12,7 @@
     "jade": "*",
     "jaydata": "*",
     "logfmt": "~1.1.2",
-    "pg": "9.2.0",
+    "pg": "*",
     "q": "*",
     "request": "~2.36.0",
     "serve-favicon": "*",
@@ -28,7 +28,7 @@
     "url": "https://github.com/"
   },
   "engines": {
-    "node": "9.2.0"
+    "node": "0.10.x"
   },
   "keywords": [
     "Salesforce",
