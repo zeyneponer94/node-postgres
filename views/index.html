@@ -45,6 +45,7 @@
 
             var myApp = angular.module('testApp',[ ]); 
             myApp.controller('testController', ['$scope' ,'$http','$window',  function($scope,$http,$window) {
+
                 $scope.submit = function(){ 
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 

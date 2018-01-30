@@ -125,7 +125,7 @@ module.exports = {
             if (count!=0)
                 res.write(JSON.stringify(result.rows, null, "    ") + "\n");
             else 
-                res.write(JSON.stringify("0", null, "    ") + "\n");
+                res.write('0');
             res.end();  
         });
     },
