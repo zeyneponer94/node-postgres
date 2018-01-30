@@ -10,7 +10,7 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select productcode from salesforce.Product2 where name="+req.query.selectedProduct);
+        var query = client.query("select name,productcode from salesforce.Product2 where name="+req.query.selectedProduct);
 
         query.on("row", function (row, result) { 
             result.addRow(row); 
