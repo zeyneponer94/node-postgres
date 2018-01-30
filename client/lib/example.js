@@ -23,8 +23,7 @@
         $scope.update = function() {
           $http({method: 'GET', url: '/db/RelatedObjects?singleSelect='+$scope.singleSelect}).
           success(function(data, status) { 
-            alert(data[0].productcode);
-            $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].productcode}).
+            $http({method: 'GET', url: '/db/RelatedObjects_2?productCode='+data[0].ProductCode}).
             success(function(data, status) { 
               alert("success2");
               alert(data);
