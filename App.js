@@ -56,7 +56,7 @@ app.get('/db/updateRecord', function(req,res){
     dbOperations.updateRecords(req,res);
 });
 
-app.post('/db/Search', function(req,res){
+app.get('/db/Search', function(req,res){
     dbOperations.Search(req,res);
 });
 

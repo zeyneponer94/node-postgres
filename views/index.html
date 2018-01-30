@@ -47,7 +47,23 @@
             myApp.controller('testController', ['$scope' ,'$http','$window',  function($scope,$http,$window) {
 
                 $scope.submit = function(){ 
-                    $http({method: 'POST', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
+                    alert("submit")
+
+
+                    $http({
+                        method: "GET",        
+                        url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id, 
+                    }) 
+                    .then(function(response){ 
+                        alert("success");
+                        alert(response.data);
+                        $scope.redirect();
+                    })
+                    .error(function (response) {
+                        alert("fail");
+                    });
+/*
+                    $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
                             alert("success");
                             alert(data);
@@ -57,7 +73,7 @@
                         error(function(data, status) {
                           alert("fail");
                           //$scope.dataset = data || "Request failed "; 
-                      });
+                      });*/
                 }
 
                 $scope.redirect = function(){
