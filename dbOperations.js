@@ -111,10 +111,10 @@ module.exports = {
         var client = new pg.Client(conString);
         client.connect();
         var query = client.query( "select * from salesforce.Customer__c Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'");
-        //var count = 0;
+        var count = 0;
         query.on("row", function (row, result) { 
             result.addRow(row); 
-            //count++;
+            count++;
         });
         query.on("error", function (err) {          
             throw err;
@@ -122,10 +122,10 @@ module.exports = {
         query.on("end", function (result) {          
             client.end();
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            //if (count!=0)
-            res.write(JSON.stringify(result.rows, null, "    ") + "\n");
-            /*else 
-                res.write('0');*/
+            if (count!=0)
+                res.write(JSON.stringify(result.rows, null, "    ") + "\n");
+            else 
+                res.write('0');
             res.end();  
         });
     },
