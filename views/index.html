@@ -47,8 +47,9 @@
             myApp.controller('testController', ['$scope' ,'$http','$window',  function($scope,$http,$window) {
                 $scope.username_id = '';
                 $scope.password_id = '';
+
                 $scope.submit = function(){ 
-                    $http({method: 'GET', url: '/db/Search', params: {username:$scope.username_id, password:$scope.password_id}}).
+                    $http({method: 'GET', url: '/db/Search'}).
                     success(function(data, status) { 
                             alert("success");
                             alert(data);
@@ -60,7 +61,6 @@
                           //$scope.dataset = data || "Request failed "; 
                     });
                 }
-
 
                 $scope.redirect = function(){
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
