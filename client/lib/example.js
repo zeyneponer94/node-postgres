@@ -30,7 +30,7 @@
               $scope.workordertype = [];                    
               var i = 0;
               while(data[i].id!=null){
-                var obj = { name: data[i].id };
+                var obj = { name: data[i].Id };
                 $scope.workordertype.push(obj);  
                 i++;
               } 

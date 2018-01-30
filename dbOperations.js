@@ -46,7 +46,7 @@ module.exports = {
 
         
         query.on("row", function (row, result) { 
-            if(row.productCode==req.query.productCode)
+            if(row.ProductCode==req.query.productCode)
                 result.addRow(row); 
         });
         query.on("end", function (result) {          
