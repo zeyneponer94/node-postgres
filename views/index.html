@@ -49,14 +49,15 @@
                 $scope.submit = function(){ 
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
-                            alert(data);
+                            alert("success");
+                            /*alert(data);
                             alert(data[0]);
                             $scope.redirect();
-                            $scope.dataset = data;
+                            $scope.dataset = data;*/
                         }).
                         error(function(data, status) {
                           alert("fail");
-                          $scope.dataset = data || "Request failed "; 
+                          //$scope.dataset = data || "Request failed "; 
                       });
                 }
 
