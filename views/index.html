@@ -52,8 +52,10 @@
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                     success(function(data, status) { 
                             alert("success");
-                            alert(data);
-                            $scope.redirect();
+                            if(data=="0")
+                                alert("no such a user exists")
+                            else
+                                $scope.redirect();
                     }).
                     error(function(data, status) {
                           alert("fail");
