@@ -6,11 +6,11 @@
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
           //Field names are case sensitive. Be careful!
-          $scope.data = [];                    
+          $scope.productlist = [];                    
           var i = 0;
           while(data[i].name!=null){
             var obj = { name: data[i].name };
-            $scope.data.push(obj);  
+            $scope.productlist.push(obj);  
             i++;
           }              
         }).
