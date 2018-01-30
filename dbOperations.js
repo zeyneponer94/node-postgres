@@ -10,14 +10,16 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select * from salesforce.Product2 where name="+req.query.singleSelect);
+        //parametre bozuluyor olabilir!!
+        var query = client.query("select * from salesforce.Product2 ");
 
 
         var count = 0;
                 
         query.on("row", function (row, result) { 
-            result.addRow(row); 
-            count++;
+            if(row.name==req.query.singleSelect)
+                result.addRow(row); 
+                count++;
         });
         query.on("end", function (result) {          
             client.end();
