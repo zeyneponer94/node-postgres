@@ -36,7 +36,6 @@
               } 
             }).
             error(function(data, status) {
-              alert("fail2");
             }); 
 
         /*    $scope.workordertype = [];                    

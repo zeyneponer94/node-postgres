@@ -42,12 +42,13 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select id from salesforce.Asset where name="+req.query.productCode);
+        var query = client.query("select * from salesforce.Asset");
 
+        
         query.on("row", function (row, result) { 
-            result.addRow(row); 
+            if(row.productCode==req.query.productCode)
+                result.addRow(row); 
         });
-
         query.on("end", function (result) {          
             client.end();
             res.writeHead(200, {'Content-Type': 'text/plain'});
