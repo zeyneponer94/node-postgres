@@ -2,6 +2,7 @@
     app.controller('myController', function ($scope, $http) {
         $scope.activation = true;  
         $scope.query = false;      
+        $scope.singleSelect = '';
 
         $http({method: 'GET', url: '/db/getProductList'}).
         success(function(data, status) { 
@@ -22,7 +23,7 @@
         //when user selects a product from selection list, ng-change calls that function to get the work order types available for chosen product
         $scope.update = function() {
           alert($scope.singleSelect);          
-          $http({method: 'GET', url: '/db/RelatedObjects?selectedProduct='+$scope.singleSelect}).
+          $http({method: 'GET', url: '/db/RelatedObjects?singleSelect='+$scope.singleSelect}).
           success(function(data, status) { 
 /*
 
