@@ -45,22 +45,9 @@
 
             var myApp = angular.module('testApp',[ ]); 
             myApp.controller('testController', ['$scope' ,'$http','$window',  function($scope,$http,$window) {
-
+                $scope.username_id = '';
+                $scope.password_id = '';
                 $scope.submit = function(){ 
-                    alert("submit")
-
-
-                    $http({
-                        method: "GET",        
-                        url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id, 
-                    }) 
-                    .then(function(response){ 
-                        alert("success");
-                        alert(response.data);
-                        $scope.redirect();
-                    });
-
-/*
                     $http({method: 'GET', url: '/db/Search?username_id='+$scope.username_id+'&password_id='+$scope.password_id}).
                         success(function(data, status) { 
                             alert("success");
@@ -71,10 +58,11 @@
                         error(function(data, status) {
                           alert("fail");
                           //$scope.dataset = data || "Request failed "; 
-                      });*/
+                      });
                 }
 
                 $scope.redirect = function(){
+                    alert("heyoo");
 /*
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
                     $http({method: 'GET', url: '/workorder'}).
@@ -85,7 +73,7 @@
                     error(function(data, status) {
                         $scope.dataset = data || "Request failed "; 
                     });*/
-
+/*
                     $window.location = "https://safe-inlet-65958.herokuapp.com";
                     $http({
                         method: "GET",        
@@ -96,7 +84,7 @@
                         var url = "https://safe-inlet-65958.herokuapp.com/workorder";
                         $window.location = url;
                     });
-                    
+                    */
                 }
 
                 $scope.getAllRec = function(){ 
