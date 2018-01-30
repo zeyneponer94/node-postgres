@@ -1,4 +1,3 @@
 {
-  "directory": "app/bower_components",
-  "strict-ssl": false
+  "directory": "app/bower_components"
 }
