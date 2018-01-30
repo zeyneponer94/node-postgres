@@ -113,6 +113,8 @@ module.exports = {
         //Where username__c ='"+req.query.username_id+"' and password__c ='"+req.query.password_id+"'"
         var query = client.query( "select * from salesforce.Customer__c");
         var count = 0;
+
+        
         query.on("row", function (row, result) { 
             result.addRow(row); 
             count++;
