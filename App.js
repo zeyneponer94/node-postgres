@@ -14,12 +14,10 @@ app.set('views', __dirname + '/views') ;
 
 app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
-} );
+});
 
 app.get('/workorder' , function(req,res) {  
-    //res.sendfile('views/redirect.html'); 
-    res.send("hello world"); 
-    
+    //res.sendfile('views/redirect.html');     
 /*
     console.log(JSON.stringify(req.headers)); //to see all headers that heroku adds
     if(req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === "http") {
